@@ -1,4 +1,4 @@
-namespace DesignPatterns.UserInterface;
+namespace DesignPatterns.ConsoleHelper;
 
 public interface IUserDialog
 {

@@ -1,11 +1,13 @@
 using DesignPatterns.Factory.Blueprint;
+using DesignPatterns.ConsoleHelper;
 
 namespace DesignPatterns.Factory.UserInterface;
 
-public class FactoryUserDialog
+public class FactoryUserDialog : IUserDialog
 {
-    public void Run() {
-        
+    public void Run()
+    {
+
         var factories = new List<IFactory> {
             new FactoryA(),
             new FactoryB()

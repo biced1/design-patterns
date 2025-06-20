@@ -9,4 +9,9 @@
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj" />
+    <ProjectReference Include="..\Factory\Factory.csproj" />
+  </ItemGroup>
+
 </Project>
