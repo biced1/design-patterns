@@ -8,5 +8,7 @@ public class OtpAuthenticator : IMfaAuthenticator
     {
         // send one time password
         // verify user enters password correctly
+        user.IsLoggedIn = true;
+        user.AuthenticationType = AuthenticationType.OTP;
     }
 }

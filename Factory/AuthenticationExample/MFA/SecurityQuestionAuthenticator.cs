@@ -8,5 +8,7 @@ public class SecurityQuestionAuthenticator : IMfaAuthenticator
     {
         // ask the user a security question
         // ensure they answer correctly
+        user.IsLoggedIn = true;
+        user.AuthenticationType = AuthenticationType.SecurityQuestion;
     }
 }

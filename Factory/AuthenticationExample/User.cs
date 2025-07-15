@@ -5,5 +5,7 @@ namespace DesignPatterns.Factory.AuthenticationExample;
 /// </summary>
 public class User
 {
-    //some user info
+    public bool IsLoggedIn { get; set; }
+
+    public AuthenticationType AuthenticationType { get; set; }
 }

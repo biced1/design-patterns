@@ -8,5 +8,7 @@ public class BiometricAuthenticator : IMfaAuthenticator
     {
         //scan users fingerprint
         //ensure it matches stored fingerprint
+        user.IsLoggedIn = true;
+        user.AuthenticationType = AuthenticationType.Biometric;
     }
 }
