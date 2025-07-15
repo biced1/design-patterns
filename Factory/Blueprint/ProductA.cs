@@ -1,14 +1,19 @@
 namespace DesignPatterns.Factory.Blueprint;
 
+/// <summary>
+/// ProductA is a thingy that does stuff specific to product A.
+/// </summary>
 public class ProductA : IProduct
 {
+    /// <inheritdoc />
     public void DoStuff()
     {
         Console.WriteLine("Doing some stuff in product A");
     }
 
-    public string GetNickname()
+    /// <inheritdoc />
+    public string Nickname
     {
-        return "Sport";
+        get => "Thingy";
     }
 }

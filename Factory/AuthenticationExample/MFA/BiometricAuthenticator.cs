@@ -1,7 +1,9 @@
 namespace DesignPatterns.Factory.AuthenticationExample.MFA;
 
+/// <inheritdoc />
 public class BiometricAuthenticator : IMfaAuthenticator
 {
+    /// <inheritdoc />
     public void Authenticate(User user)
     {
         //scan users fingerprint

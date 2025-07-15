@@ -3,6 +3,8 @@ using DesignPatterns.ConsoleHelper;
 
 namespace DesignPatterns.Factory.UserInterface;
 
+//TODO: Probably remove this. 
+//I don't know that a navigatable dialog is actually useful to showcase these patterns
 public class FactoryUserDialog : IUserDialog
 {
     public void Run()

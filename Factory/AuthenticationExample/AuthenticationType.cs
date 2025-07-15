@@ -1,5 +1,8 @@
 namespace DesignPatterns.Factory.AuthenticationExample;
 
+/// <summary>
+/// Different types of multi-factor authentication.
+/// </summary>
 public enum AuthenticationType
 {
     Biometric,
