@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj" />
-    <ProjectReference Include="..\Factory\Factory.csproj" />
+    <ProjectReference Include="..\Creational\Factory\Factory.csproj" />
   </ItemGroup>
 
 </Project>

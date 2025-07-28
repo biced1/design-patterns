@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{264F6FD3-DB8D-4061-8848-F03007BDED48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Creational\Factory\Factory.csproj", "{264F6FD3-DB8D-4061-8848-F03007BDED48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{67CC9C8E-C5C7-457F-99EB-649CE833C064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{1A2D9EA5-174A-4527-8D28-FD5B1282F793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "Creational\AbstractFactory\AbstractFactory.csproj", "{1A2D9EA5-174A-4527-8D28-FD5B1282F793}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "ConsoleHelper\ConsoleHelper.csproj", "{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelperTests", "ConsoleHelperTests\ConsoleHelperTests.csproj", "{5225D39D-0D20-40CC-84B3-6C102FBB2C70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTests", "FactoryTests\FactoryTests.csproj", "{62CEBD7F-EEAA-4159-ABB7-66C0BB18438F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTests", "Creational\FactoryTests\FactoryTests.csproj", "{62CEBD7F-EEAA-4159-ABB7-66C0BB18438F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryTests", "AbstractFactoryTests\AbstractFactoryTests.csproj", "{B1A1097E-0380-4F43-85FF-5347E95CDA81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryTests", "Creational\AbstractFactoryTests\AbstractFactoryTests.csproj", "{B1A1097E-0380-4F43-85FF-5347E95CDA81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{53F823DD-A972-41ED-8F62-3BCB94466CB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Structural\Adapter\Adapter.csproj", "{53F823DD-A972-41ED-8F62-3BCB94466CB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
