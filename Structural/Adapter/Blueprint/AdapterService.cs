@@ -1,10 +1,10 @@
 namespace Adapter.Blueprint;
 
-public class Adapter : IAdapter
+public class AdapterService : IService
 {
     private readonly LegacyService _legacyService;
 
-    public Adapter(LegacyService legacyService)
+    public AdapterService(LegacyService legacyService)
     {
         _legacyService = legacyService;
     }

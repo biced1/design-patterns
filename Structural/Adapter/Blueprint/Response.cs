@@ -1,5 +1,3 @@
-using System;
-
 namespace Adapter.Blueprint;
 
 public class Response
