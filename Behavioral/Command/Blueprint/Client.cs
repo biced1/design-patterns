@@ -21,7 +21,7 @@ public class Client
         _command2 = new Command2(this, receiver);
     }
 
-    public void ExecuteCommand1( char character)
+    public void ExecuteCommand1(char character)
     {
         PressedCharacter = character;
         ExecuteCommand(_command1);
