@@ -19,22 +19,21 @@ public class AuthenticationUserDialog : UserDialogBase
             new SecurityQuestionLoginService()
         };
 
-        var keepGoing = true;
-        while (keepGoing)
+        var userInput = new IntUserInput();
+        while (!userInput.ShouldGoBack)
         {
             _console.WriteLine("Which login service would you like to use?");
             _console.ListItems([.. loginServices.Select(x => x.GetType().Name)]);
-            var userInput = _console.GetIntInput(1, loginServices.Count);
+            userInput = _console.GetIntInput(1, loginServices.Count);
             if (userInput.ShouldGoBack)
             {
-                keepGoing = false;
                 GoBack();
             }
             else
             {
                 var user = new User();
                 loginServices[userInput.UserInput - 1 ?? 0].Login(user);
-                // _console.WriteLine()
+                _console.WriteLine("User was logged in with Authentication Method " + user.AuthenticationType);
             }
         }
     }

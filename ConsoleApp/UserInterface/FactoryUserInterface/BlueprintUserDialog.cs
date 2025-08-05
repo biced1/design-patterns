@@ -17,15 +17,14 @@ public class BlueprintUserDialog : UserDialogBase
             new FactoryB()
         };
 
-        var keepGoing = true;
-        while (keepGoing)
+        var userInput = new IntUserInput();
+        while (!userInput.ShouldGoBack)
         {
             _console.WriteLine("Which factory would you like to test?");
             _console.ListItems([.. factories.Select(x => x.GetType().Name)]);
-            var userInput = _console.GetIntInput(1, factories.Count);
+            userInput = _console.GetIntInput(1, factories.Count);
             if (userInput.ShouldGoBack)
             {
-                keepGoing = false;
                 GoBack();
             }
             else

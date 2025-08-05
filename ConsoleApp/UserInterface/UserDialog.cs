@@ -19,17 +19,14 @@ public class UserDialog : UserDialogBase
 
         var userInput = new IntUserInput();
 
-        while (!userInput.ShouldGoBack)
-        {
-            _console.WriteLine("Welcome to Design Patterns.");
-            _console.WriteLine("What kind of design pattern would you like to test?");
+        _console.WriteLine("Welcome to Design Patterns.");
+        _console.WriteLine("What kind of design pattern would you like to test?");
 
-            _console.ListItems([.. options.Select(x => x.DisplayName)]);
-            userInput = _console.GetIntInput(1, options.Count);
-            if (userInput.ShouldGoBack)
-            {
-                GoBack();
-            }
+        _console.ListItems([.. options.Select(x => x.DisplayName)]);
+        userInput = _console.GetIntInput(1, options.Count);
+        if (userInput.ShouldGoBack)
+        {
+            GoBack();
         }
 
         options[(userInput.UserInput ?? 1) - 1].Run();

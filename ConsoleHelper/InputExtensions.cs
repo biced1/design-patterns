@@ -30,6 +30,7 @@ public static class InputExtensions
             if (input == "b")
             {
                 shouldGoBack = true;
+                wasSuccessful = true;
             }
             else
             {
