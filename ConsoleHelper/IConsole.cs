@@ -1,4 +1,4 @@
-namespace DesignPatterns.ConsoleHelper;
+namespace ConsoleHelper;
 
 public interface IConsole
 {

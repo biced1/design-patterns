@@ -1,4 +1,4 @@
-using DesignPatterns.ConsoleHelper;
+using ConsoleHelper;
 using Moq;
 
 namespace ConsoleHelperTests;
@@ -17,9 +17,9 @@ public class InputHelperTests
     {
         consoleMock.Setup(x => x.ReadLine()).Returns("2");
 
-        var result = InputHelper.GetIntInput(consoleMock.Object, "Test input", 0, 3);
+        var result = consoleMock.Object.GetIntInput( 0, 3);
 
-        Assert.Equal(2, result);
+        Assert.Equal(2, result.UserInput);
     }
 
     [Theory]
@@ -32,8 +32,8 @@ public class InputHelperTests
         consoleMock.Setup(x => x.ReadLine()).Returns(invalidInput);
         consoleMock.Setup(x => x.ReadLine()).Returns("q");
 
-        var result = InputHelper.GetIntInput(consoleMock.Object, "Test input", minimum, maximum);
+        var result = consoleMock.Object.GetIntInput(minimum, maximum);
 
-        Assert.Null(result);
+        Assert.Null(result.UserInput);
     }
 }

@@ -1,32 +1,37 @@
-﻿using DesignPatterns.ConsoleHelper;
-using DesignPatterns.Factory.UserInterface;
+﻿using ConsoleApp.UserInterface.FactoryUserInterface;
+using ConsoleHelper;
 
 namespace DesignPatterns.UserInterface;
 
-public static class UserDialog
+public class UserDialog : UserDialogBase
 {
-    public static void Run(IConsole console)
+    public UserDialog(IConsole console, UserDialogBase? previousDialog) : base(console, previousDialog)
+    { }
+
+    public override string DisplayName => throw new NotImplementedException();
+
+    public override void Run()
     {
-        var options = new List<IUserDialog>
+        var options = new List<UserDialogBase>
         {
-            new FactoryUserDialog()
+            new FactoryUserDialog(_console, this)
         };
 
-        int? factoryChoice = null;
+        var userInput = new IntUserInput();
 
-        while (factoryChoice == null)
+        while (!userInput.ShouldGoBack)
         {
-            console.WriteLine("Welcome to Design Patterns.");
-            var message = "What kind of design pattern would you like to test?\n";
+            _console.WriteLine("Welcome to Design Patterns.");
+            _console.WriteLine("What kind of design pattern would you like to test?");
 
-            for (int x = 0; x < options.Count; x++)
+            _console.ListItems([.. options.Select(x => x.DisplayName)]);
+            userInput = _console.GetIntInput(1, options.Count);
+            if (userInput.ShouldGoBack)
             {
-                message += $"{x + 1}: {options[x].GetType().Name}\n";
+                GoBack();
             }
-            factoryChoice = InputHelper.GetIntInput(console, message, 1, options.Count);
         }
 
-        options[(factoryChoice ?? 1) - 1].Run();
+        options[(userInput.UserInput ?? 1) - 1].Run();
     }
-
 }

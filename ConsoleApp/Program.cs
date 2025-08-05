@@ -1,12 +1,11 @@
-using DesignPatterns.ConsoleHelper;
+using ConsoleHelper;
 using DesignPatterns.UserInterface;
 
 public class Program
 {
     public static void Main()
     {
-
-        UserDialog.Run(new ConsoleWrapper());
+        new UserDialog(new ConsoleWrapper(), null).Run();
     }
 
 }
