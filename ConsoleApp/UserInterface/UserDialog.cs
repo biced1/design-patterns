@@ -6,10 +6,17 @@ using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface;
 
+/// <summary>
+/// The top level menu of the application that allows users to choose a design pattern to explore.
+/// </summary>
+/// <param name="console"><see cref="IConsole"/> used to interact with the console.</param>
+/// <param name="previousDialog">The most recent <see cref="UserDialogBase"/> that was ran, to allow the user to navigate back in dialog options.</param>
 public class UserDialog(IConsole console, UserDialogBase? previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public override string DisplayName => throw new NotImplementedException();
+    /// <inheritdoc />
+    public override string DisplayName => "Main Menu";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var options = new List<UserDialogBase>

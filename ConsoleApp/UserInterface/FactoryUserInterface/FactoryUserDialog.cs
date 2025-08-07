@@ -2,8 +2,14 @@ using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.FactoryUserInterface;
 
+/// <summary>
+/// Dialog that displays options for the Factory Pattern.
+/// </summary>
+/// <param name="console"><see cref="IConsole"/> used to interact with the console.</param>
+/// <param name="previousDialog">The most recent <see cref="UserDialogBase"/> that was ran, to allow the user to navigate back in dialog options.</param>
 public class FactoryUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
+    /// <inheritdoc />
     public override string DisplayName => "Factory";
 
     /// <inheritdoc />

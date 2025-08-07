@@ -55,6 +55,10 @@ public static class InputExtensions
         return new UserInput<int?> { Input = capturedInput, ShouldGoBack = shouldGoBack };
     }
 
+    /// <summary>
+    /// Retrieves user input as a double.
+    /// </summary>
+    /// <returns>A double representing the user input.</returns>
     public static double GetDoubleInput(this IConsole console)
     {
         var wasSuccessful = false;
