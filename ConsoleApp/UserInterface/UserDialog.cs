@@ -1,5 +1,6 @@
 ﻿using ConsoleApp.UserInterface.AbstractFactoryUserInterface;
 using ConsoleApp.UserInterface.AdapterUserInterface;
+using ConsoleApp.UserInterface.CommandUserInterface;
 using ConsoleApp.UserInterface.FactoryUserInterface;
 using ConsoleHelper;
 
@@ -18,21 +19,11 @@ public class UserDialog : UserDialogBase
         {
             new FactoryUserDialog(_console, this),
             new AbstractFactoryUserDialog(_console, this),
-            new AdapterUserDialog(_console, this)
+            new AdapterUserDialog(_console, this),
+            new CommandUserDialog(_console, this)
         };
 
-        var userInput = new IntUserInput();
-
         _console.WriteLine("Welcome to Design Patterns.");
-        _console.WriteLine("What kind of design pattern would you like to test?");
-
-        _console.ListItems([.. options.Select(x => x.DisplayName)]);
-        userInput = _console.GetIntInput(1, options.Count);
-        if (userInput.ShouldGoBack)
-        {
-            GoBack();
-        }
-
-        options[(userInput.UserInput ?? 1) - 1].Run();
+        RunSelectedPattern(options, "What kind of design pattern would you like to test?");
     }
 }

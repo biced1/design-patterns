@@ -5,31 +5,28 @@ namespace Command.Blueprint;
 /// </summary>
 public class Client
 {
-    private Stack<Command> _commandHistory = new Stack<Command>();
+    private Stack<CommandBase> _commandHistory = new Stack<CommandBase>();
     private readonly Invoker _invoker;
-
-    private readonly Command _command1;
-    private readonly Command _command2;
+    private readonly Receiver _receiver;
 
     public char PressedCharacter { get; private set; }
 
     public Client(Receiver receiver, Invoker invoker)
     {
         _invoker = invoker;
+        _receiver = receiver;
 
-        _command1 = new Command1(this, receiver);
-        _command2 = new Command2(this, receiver);
     }
 
     public void ExecuteCommand1(char character)
     {
         PressedCharacter = character;
-        ExecuteCommand(_command1);
+        ExecuteCommand(new Command1(this, _receiver));
     }
 
     public void ExecuteCommand2()
     {
-        ExecuteCommand(_command2);
+        ExecuteCommand(new Command2(this, _receiver));
     }
 
     /// <summary>
@@ -39,11 +36,14 @@ public class Client
     /// </summary>
     public void Undo()
     {
-        var command = _commandHistory.Pop();
-        command?.Undo();
+        if (_commandHistory.Any())
+        {
+            var command = _commandHistory.Pop();
+            command.Undo();
+        }
     }
 
-    private void ExecuteCommand(Command command)
+    private void ExecuteCommand(CommandBase command)
     {
         _invoker.SetCommand(command);
         _invoker.ExecuteCommand();

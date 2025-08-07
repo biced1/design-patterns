@@ -15,15 +15,7 @@ public class AdapterUserDialog : UserDialogBase
             new BlueprintUserDialog(_console, this),
             new CalculatorExampleUserDialog(_console, this)
         };
-
-        _console.WriteLine("Welcome, what example of the Adapter Pattern would you like to explore?");
-        _console.ListItems([.. options.Select(x => x.DisplayName)]);
-        var option = _console.GetIntInput(1, options.Count);
-        if (option.ShouldGoBack)
-        {
-            GoBack();
-        }
-
-        options[option.UserInput - 1 ?? 0].Run();
+        
+        RunSelectedPattern(options, "Welcome, what example of the Adapter Pattern would you like to explore?");
     }
 }

@@ -1,12 +1,12 @@
 namespace Command.Blueprint;
 
-public abstract class Command
+public abstract class CommandBase
 {
     protected readonly Client _client;
     protected readonly Receiver _receiver;
     private string? BackupState { get; set; } = null;
 
-    public Command(Client client, Receiver receiver)
+    public CommandBase(Client client, Receiver receiver)
     {
         _client = client;
         _receiver = receiver;

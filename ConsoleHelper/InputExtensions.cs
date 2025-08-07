@@ -48,6 +48,7 @@ public static class InputExtensions
                 }
             }
         }
+        console.WriteLine("");
         return new IntUserInput { UserInput = capturedInput, ShouldGoBack = shouldGoBack };
     }
 
@@ -70,6 +71,7 @@ public static class InputExtensions
             }
         }
         
+        console.WriteLine("");
         return capturedInput;
     }
 }

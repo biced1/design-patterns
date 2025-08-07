@@ -6,8 +6,8 @@ namespace Command.Blueprint;
 /// </summary>
 public class Invoker
 {
-    private Command? _command;
-    public void SetCommand(Command command)
+    private CommandBase? _command;
+    public void SetCommand(CommandBase command)
     {
         _command = command;
     }

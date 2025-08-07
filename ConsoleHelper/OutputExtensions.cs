@@ -6,12 +6,12 @@ public static class OutputExtensions
     {
         for (int x = 0; x < items.Count; x++)
         {
-            console.WriteLine($"{x + 1}: {items[x]}");
+            console.WriteLine($"\t{x + 1}: {items[x]}");
         }
         if (!listOnly)
         {
-            console.WriteLine("b: back");
-            console.WriteLine("q: quit");
+            console.WriteLine("\tb: back");
+            console.WriteLine("\tq: quit");
         }
     }
 }

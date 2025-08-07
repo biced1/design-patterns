@@ -1,7 +1,7 @@
 
 namespace Command.Blueprint;
 
-public class Command1 : Command
+public class Command1 : CommandBase
 {
     public Command1(Client client, Receiver receiver) : base(client, receiver)
     {
