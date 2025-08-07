@@ -1,4 +1,5 @@
 ﻿using ConsoleApp.UserInterface.AbstractFactoryUserInterface;
+using ConsoleApp.UserInterface.AdapterUserInterface;
 using ConsoleApp.UserInterface.FactoryUserInterface;
 using ConsoleHelper;
 
@@ -16,7 +17,8 @@ public class UserDialog : UserDialogBase
         var options = new List<UserDialogBase>
         {
             new FactoryUserDialog(_console, this),
-            new AbstractFactoryUserDialog(_console, this)
+            new AbstractFactoryUserDialog(_console, this),
+            new AdapterUserDialog(_console, this)
         };
 
         var userInput = new IntUserInput();

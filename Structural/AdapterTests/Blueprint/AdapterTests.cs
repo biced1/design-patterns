@@ -13,6 +13,18 @@ public class AdapterTests
     }
 
     [Fact]
+    public void ServiceMethod_ReturnsSpecialResponse()
+    {
+        var data = new SpecialData
+        {
+            name = ['S', 'p', 'e', 'c', 'i', 'a', 'l']
+        };
+        var specialResponse = _legacyService.ServiceMethod(data);
+
+        Assert.Equal(data.name.Length, specialResponse.i_property);
+    }
+
+    [Fact]
     public void Method_ReturnsResponse()
     {
         var dataText = "Data that's easy to use.";

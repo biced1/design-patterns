@@ -13,6 +13,7 @@
     <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj" />
     <ProjectReference Include="..\Creational\AbstractFactory\AbstractFactory.csproj" />
     <ProjectReference Include="..\Creational\Factory\Factory.csproj" />
+    <ProjectReference Include="..\Structural\Adapter\Adapter.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,7 +14,7 @@ public class Client
         var data = new Data("Not so special");
         var response = _service.Method(data);
 
-        Console.WriteLine($"My special name has a length of {response.Property}");
+        Console.WriteLine($"My not so special name has a length of {response.Property}");
     }
 
 }

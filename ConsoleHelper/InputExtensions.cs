@@ -10,7 +10,7 @@ public static class InputExtensions
     /// <param name="minimum">The lowest number that will be accepted, inclusive.</param>
     /// <param name="maximum">The highest number that will be accepted, inclusive.</param>
     /// <returns>The captured input, or null if cancelled.</returns>
-    public static IntUserInput GetIntInput(this IConsole console, int minimum = int.MinValue, int maximum = int.MaxValue)
+    public static IntUserInput GetIntInput(this IConsole console, int minimum = int.MinValue, int maximum = int.MaxValue, bool listOnly = false)
     {
         if (minimum > maximum)
         {
@@ -23,11 +23,11 @@ public static class InputExtensions
         while (!wasSuccessful)
         {
             var input = console.ReadLine()?.ToLower();
-            if (input == "q")
+            if (input == "q" && !listOnly)
             {
                 Environment.Exit(0);
             }
-            if (input == "b")
+            if (input == "b" && !listOnly)
             {
                 shouldGoBack = true;
                 wasSuccessful = true;
@@ -49,6 +49,27 @@ public static class InputExtensions
             }
         }
         return new IntUserInput { UserInput = capturedInput, ShouldGoBack = shouldGoBack };
+    }
 
+    public static double GetDoubleInput(this IConsole console)
+    {
+        var wasSuccessful = false;
+        double capturedInput = 0;
+        while (!wasSuccessful)
+        {
+        var input = console.ReadLine()?.ToLower();
+            wasSuccessful = double.TryParse(input, out var parsedInput);
+
+            if (wasSuccessful)
+            {
+                capturedInput = parsedInput;
+            }
+            else
+            {
+                console.WriteLine("Invalid input. Please try again.");
+            }
+        }
+        
+        return capturedInput;
     }
 }
