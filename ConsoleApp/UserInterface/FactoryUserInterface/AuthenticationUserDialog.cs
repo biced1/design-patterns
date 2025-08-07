@@ -1,14 +1,12 @@
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 using Factory.AuthenticationExample;
 using Factory.AuthenticationExample.Login;
 
 namespace ConsoleApp.UserInterface.FactoryUserInterface;
 
-public class AuthenticationUserDialog : UserDialogBase
+public class AuthenticationUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public AuthenticationUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Authentication";
 
     public override void Run()

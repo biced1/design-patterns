@@ -1,12 +1,9 @@
-using ConsoleHelper;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.CommandUserInterface;
 
-public class CommandUserDialog : UserDialogBase
+public class CommandUserDialog(IConsole console, UserDialogBase? previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public CommandUserDialog(IConsole console, UserDialogBase? previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Command";
 
     public override void Run()

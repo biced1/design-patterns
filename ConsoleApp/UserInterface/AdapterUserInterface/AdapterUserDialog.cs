@@ -1,12 +1,9 @@
-using ConsoleHelper;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.AdapterUserInterface;
 
-public class AdapterUserDialog : UserDialogBase
+public class AdapterUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public AdapterUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Adapter";
 
     public override void Run()

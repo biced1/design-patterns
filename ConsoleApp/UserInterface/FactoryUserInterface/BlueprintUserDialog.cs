@@ -1,13 +1,11 @@
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 using Factory.Blueprint;
 
 namespace ConsoleApp.UserInterface.FactoryUserInterface;
 
-public class BlueprintUserDialog : UserDialogBase
+public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Blueprint";
 
     public override void Run()

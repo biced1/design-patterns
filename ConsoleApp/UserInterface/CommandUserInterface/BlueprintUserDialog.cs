@@ -1,13 +1,11 @@
 using Command.Blueprint;
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.CommandUserInterface;
 
-public class BlueprintUserDialog : UserDialogBase
+public class BlueprintUserDialog(IConsole console, UserDialogBase? previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public BlueprintUserDialog(IConsole console, UserDialogBase? previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Blueprint";
 
     public override void Run()
@@ -44,7 +42,7 @@ public class BlueprintUserDialog : UserDialogBase
                     _console.WriteLine($"You undid the last command.");
                     break;
             }
-            _console.WriteLine($"The current state of the Receiver is {receiver.GetState()}");
+            _console.WriteLine($"The current state of the Receiver is {receiver.State}");
         }
     }
 }

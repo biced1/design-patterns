@@ -9,9 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "Creational\AbstractFactory\AbstractFactory.csproj", "{1A2D9EA5-174A-4527-8D28-FD5B1282F793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "ConsoleHelper\ConsoleHelper.csproj", "{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelperTests", "ConsoleHelperTests\ConsoleHelperTests.csproj", "{5225D39D-0D20-40CC-84B3-6C102FBB2C70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTests", "ConsoleHelperTests\ConsoleAppTests.csproj", "{5225D39D-0D20-40CC-84B3-6C102FBB2C70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTests", "Creational\FactoryTests\FactoryTests.csproj", "{62CEBD7F-EEAA-4159-ABB7-66C0BB18438F}"
 EndProject
@@ -49,10 +47,6 @@ Global
 		{1A2D9EA5-174A-4527-8D28-FD5B1282F793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A2D9EA5-174A-4527-8D28-FD5B1282F793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A2D9EA5-174A-4527-8D28-FD5B1282F793}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B5E2E27-6CFF-47DD-BB3B-6F7C57CCD0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5225D39D-0D20-40CC-84B3-6C102FBB2C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5225D39D-0D20-40CC-84B3-6C102FBB2C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5225D39D-0D20-40CC-84B3-6C102FBB2C70}.Release|Any CPU.ActiveCfg = Release|Any CPU

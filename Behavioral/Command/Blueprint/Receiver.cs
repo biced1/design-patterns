@@ -5,20 +5,17 @@ namespace Command.Blueprint;
 /// </summary>
 public class Receiver
 {
-    private string? _state;
+    /// <summary>
+    /// Represents the current state of the application.
+    /// </summary>
+    public string? State { get; set; }
 
-    public string? GetState()
-    {
-        return _state;
-    }
-
-    public void SetState(string? newState)
-    {
-        _state = newState;
-    }
-
+    /// <summary>
+    /// Appends the given string to the end of the current state.
+    /// </summary>
+    /// <param name="appendState">The string to append to the current state.</param>
     public void AppendState(string appendState)
     {
-        _state += appendState;
+        State += appendState;
     }
 }

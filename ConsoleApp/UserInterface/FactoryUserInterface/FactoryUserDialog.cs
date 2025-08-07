@@ -1,12 +1,9 @@
-using ConsoleHelper;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.FactoryUserInterface;
 
-public class FactoryUserDialog : UserDialogBase
+public class FactoryUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public FactoryUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Factory";
 
     public override void Run()

@@ -1,13 +1,11 @@
 using AbstractFactory.CarExample;
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.AbstractFactoryUserInterface;
 
-public class CarExampleUserDialog : UserDialogBase
+public class CarExampleUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public CarExampleUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Car Part Factory";
 
     public override void Run()

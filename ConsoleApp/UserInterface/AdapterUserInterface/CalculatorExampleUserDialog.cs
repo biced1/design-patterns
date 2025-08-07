@@ -1,14 +1,12 @@
 using Adapter.CalculatorExample;
 using Adapter.CalculatorExample.Calculator;
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.AdapterUserInterface;
 
-public class CalculatorExampleUserDialog : UserDialogBase
+public class CalculatorExampleUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public CalculatorExampleUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Calculator Adapter";
 
     public override void Run()

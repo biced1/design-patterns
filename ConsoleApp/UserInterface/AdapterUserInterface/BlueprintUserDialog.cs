@@ -1,14 +1,12 @@
 using Adapter.Blueprint;
 using Adapter.Blueprint.Legacy;
-using ConsoleHelper;
+using ConsoleApp.Extensions;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.AdapterUserInterface;
 
-public class BlueprintUserDialog : UserDialogBase
+public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Blueprint";
 
     public override void Run()

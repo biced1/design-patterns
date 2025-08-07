@@ -2,15 +2,12 @@
 using ConsoleApp.UserInterface.AdapterUserInterface;
 using ConsoleApp.UserInterface.CommandUserInterface;
 using ConsoleApp.UserInterface.FactoryUserInterface;
-using ConsoleHelper;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface;
 
-public class UserDialog : UserDialogBase
+public class UserDialog(IConsole console, UserDialogBase? previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public UserDialog(IConsole console, UserDialogBase? previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => throw new NotImplementedException();
 
     public override void Run()

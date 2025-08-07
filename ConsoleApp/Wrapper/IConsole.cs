@@ -1,4 +1,4 @@
-namespace ConsoleHelper;
+namespace ConsoleApp.Wrapper;
 
 public interface IConsole
 {

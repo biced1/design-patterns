@@ -1,12 +1,9 @@
-using ConsoleHelper;
+using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.AbstractFactoryUserInterface;
 
-public class AbstractFactoryUserDialog : UserDialogBase
+public class AbstractFactoryUserDialog(IConsole console, UserDialogBase previousDialog) : UserDialogBase(console, previousDialog)
 {
-    public AbstractFactoryUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    { }
-
     public override string DisplayName => "Abstract Factory";
 
     public override void Run()

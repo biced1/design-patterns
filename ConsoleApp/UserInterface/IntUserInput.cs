@@ -1,4 +1,4 @@
-namespace ConsoleHelper;
+namespace ConsoleApp.UserInterface;
 
 public class IntUserInput //Make generic
 {

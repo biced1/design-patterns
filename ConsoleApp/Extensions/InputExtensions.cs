@@ -1,4 +1,7 @@
-namespace ConsoleHelper;
+using ConsoleApp.UserInterface;
+using ConsoleApp.Wrapper;
+
+namespace ConsoleApp.Extensions;
 
 public static class InputExtensions
 {

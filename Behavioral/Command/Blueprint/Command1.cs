@@ -1,14 +1,15 @@
 
 namespace Command.Blueprint;
 
-public class Command1 : CommandBase
+/// <summary>
+/// <see cref="CommandBase"/> that appends the most recent pressed character to the receiver state.
+/// </summary>
+/// <param name="client">The <see cref="Client"/> that the user interacts with.</param>
+/// <param name="receiver">The <see cref="Receiver"/> that manages the state.</param>
+public class Command1(Client client, Receiver receiver) : CommandBase(client, receiver)
 {
-    public Command1(Client client, Receiver receiver) : base(client, receiver)
-    {
-    }
-
     /// <summary>
-    /// Command that appends the last pressed character to the current state.
+    /// <see cref="CommandBase"/> that appends the last pressed character to the current state.
     /// </summary>
     public override void Execute()
     {

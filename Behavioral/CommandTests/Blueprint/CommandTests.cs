@@ -18,42 +18,42 @@ public class CommandTests
     [Fact]
     public void ExecuteCommand1_AppendsCorrectCharacter()
     {
-        _receiver.SetState("");
+        _receiver.State = "";
 
         _client.ExecuteCommand1('t');
 
-        Assert.Equal("t", _receiver.GetState());
+        Assert.Equal("t", _receiver.State);
     }
 
     [Fact]
     public void ExecuteCommand2_RemovesEndCharacter()
     {
-        _receiver.SetState("Test");
+        _receiver.State = "Test";
 
         _client.ExecuteCommand2();
 
-        Assert.Equal("Tes", _receiver.GetState());
+        Assert.Equal("Tes", _receiver.State);
     }
 
     [Fact]
     public void Undo_DoesNothingIfNoCommands()
     {
-        _receiver.SetState("Test");
+        _receiver.State = "Test";
 
         _client.Undo();
 
-        Assert.Equal("Test", _receiver.GetState());
+        Assert.Equal("Test", _receiver.State);
     }
 
     [Fact]
     public void Undo_UndoesLastCommand()
     {
-        _receiver.SetState("Test");
+        _receiver.State = "Test";
 
         _client.ExecuteCommand1('A');
         _client.ExecuteCommand1('b');
         _client.Undo();
 
-        Assert.Equal("TestA", _receiver.GetState());
+        Assert.Equal("TestA", _receiver.State);
     }
 }
