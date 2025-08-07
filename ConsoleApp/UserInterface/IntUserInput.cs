@@ -1,7 +1,7 @@
 namespace ConsoleApp.UserInterface;
 
-public class IntUserInput //Make generic
+public class UserInput<T>
 {
-    public int? UserInput { get; set; }
+    public T? Input { get; set; }
     public bool ShouldGoBack { get; set; } = false;
 }

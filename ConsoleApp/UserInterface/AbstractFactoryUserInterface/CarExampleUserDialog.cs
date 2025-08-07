@@ -8,6 +8,7 @@ public class CarExampleUserDialog(IConsole console, UserDialogBase previousDialo
 {
     public override string DisplayName => "Car Part Factory";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var carPartFactories = new List<ICarPartFactory> {
@@ -15,7 +16,7 @@ public class CarExampleUserDialog(IConsole console, UserDialogBase previousDialo
             new VwGtiCarPartFactory()
         };
 
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             _console.WriteLine("What car would you like to build parts for?");
@@ -27,9 +28,10 @@ public class CarExampleUserDialog(IConsole console, UserDialogBase previousDialo
             }
             else
             {
-                var cupHolder = carPartFactories[userInput.UserInput - 1 ?? 0].CreateCupHolder();
-                var engine = carPartFactories[userInput.UserInput - 1 ?? 0].CreateEngine();
-                var transmission = carPartFactories[userInput.UserInput - 1 ?? 0].CreateTransmission();
+                var selectedFactory = carPartFactories[userInput.Input - 1 ?? 0];
+                var cupHolder = selectedFactory.CreateCupHolder();
+                var engine = selectedFactory.CreateEngine();
+                var transmission = selectedFactory.CreateTransmission();
                 _console.WriteLine("You built the following car parts.");
                 _console.WriteLine($"A cup holder with {cupHolder.Capacity} spots for cups.");
                 _console.WriteLine($"An engine with {engine.Cylinders} cylinders.");

@@ -6,6 +6,7 @@ public class CommandUserDialog(IConsole console, UserDialogBase? previousDialog)
 {
     public override string DisplayName => "Command";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var options = new List<UserDialogBase> {

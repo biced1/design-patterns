@@ -8,6 +8,7 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog
 {
     public override string DisplayName => "Blueprint";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var factories = new List<IFactory> {
@@ -15,7 +16,7 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog
             new FactoryB()
         };
 
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             _console.WriteLine("Which factory would you like to test?");
@@ -27,7 +28,7 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog
             }
             else
             {
-                var product = factories[userInput.UserInput - 1 ?? 0].CreateProduct();
+                var product = factories[userInput.Input - 1 ?? 0].CreateProduct();
                 _console.WriteLine("Created product " + product.Nickname);
             }
         }

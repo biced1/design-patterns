@@ -9,9 +9,10 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog
 {
     public override string DisplayName => "Blueprint";
 
+    /// <inheritdoc />
     public override void Run()
     {
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             var options = new List<string>
@@ -29,7 +30,7 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase previousDialog
             else
             {
                 var legacyService = new LegacyService();
-                if (userInput.UserInput == 1)
+                if (userInput.Input == 1)
                 {
                     var data = new SpecialData
                     {

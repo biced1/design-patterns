@@ -8,12 +8,13 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase? previousDialo
 {
     public override string DisplayName => "Blueprint";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var receiver = new Receiver();
         var client = new Client(receiver, new Invoker());
 
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             var options = new List<string> { "Run Command1 to add a character", "Run Command2 to delete a character", "Undo the last command" };
@@ -24,7 +25,7 @@ public class BlueprintUserDialog(IConsole console, UserDialogBase? previousDialo
                 GoBack();
             }
 
-            switch (userInput.UserInput)
+            switch (userInput.Input)
             {
                 case 1:
                     var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

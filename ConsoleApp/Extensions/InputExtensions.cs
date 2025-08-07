@@ -13,7 +13,7 @@ public static class InputExtensions
     /// <param name="minimum">The lowest number that will be accepted, inclusive.</param>
     /// <param name="maximum">The highest number that will be accepted, inclusive.</param>
     /// <returns>The captured input, or null if cancelled.</returns>
-    public static IntUserInput GetIntInput(this IConsole console, int minimum = int.MinValue, int maximum = int.MaxValue, bool listOnly = false)
+    public static UserInput<int?> GetIntInput(this IConsole console, int minimum = int.MinValue, int maximum = int.MaxValue, bool listOnly = false)
     {
         if (minimum > maximum)
         {
@@ -52,7 +52,7 @@ public static class InputExtensions
             }
         }
         console.WriteLine("");
-        return new IntUserInput { UserInput = capturedInput, ShouldGoBack = shouldGoBack };
+        return new UserInput<int?> { Input = capturedInput, ShouldGoBack = shouldGoBack };
     }
 
     public static double GetDoubleInput(this IConsole console)

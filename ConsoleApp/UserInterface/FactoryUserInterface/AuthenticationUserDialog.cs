@@ -9,6 +9,7 @@ public class AuthenticationUserDialog(IConsole console, UserDialogBase previousD
 {
     public override string DisplayName => "Authentication";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var loginServices = new List<LoginService> {
@@ -17,7 +18,7 @@ public class AuthenticationUserDialog(IConsole console, UserDialogBase previousD
             new SecurityQuestionLoginService()
         };
 
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             _console.WriteLine("Which login service would you like to use?");
@@ -30,7 +31,7 @@ public class AuthenticationUserDialog(IConsole console, UserDialogBase previousD
             else
             {
                 var user = new User();
-                loginServices[userInput.UserInput - 1 ?? 0].Login(user);
+                loginServices[userInput.Input - 1 ?? 0].Login(user);
                 _console.WriteLine("User was logged in with Authentication Method " + user.AuthenticationType);
             }
         }

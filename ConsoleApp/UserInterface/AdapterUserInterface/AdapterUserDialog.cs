@@ -6,6 +6,7 @@ public class AdapterUserDialog(IConsole console, UserDialogBase previousDialog) 
 {
     public override string DisplayName => "Adapter";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var options = new List<UserDialogBase> {

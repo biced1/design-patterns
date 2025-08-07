@@ -57,6 +57,6 @@ public abstract class UserDialogBase
             GoBack();
         }
 
-        options[option.UserInput - 1 ?? 0].Run();
+        options[option.Input - 1 ?? 0].Run();
     }
 }

@@ -9,9 +9,10 @@ public class CalculatorExampleUserDialog(IConsole console, UserDialogBase previo
 {
     public override string DisplayName => "Calculator Adapter";
 
+    /// <inheritdoc />
     public override void Run()
     {
-        var userInput = new IntUserInput();
+        var userInput = new UserInput<int?>();
         while (!userInput.ShouldGoBack)
         {
             var options = new List<string>
@@ -29,7 +30,7 @@ public class CalculatorExampleUserDialog(IConsole console, UserDialogBase previo
             else
             {
                 var calculatorService = new CalculatorService();
-                if (userInput.UserInput == 1)
+                if (userInput.Input == 1)
                 {
                     RunLegacyCalculator(calculatorService);
                 }
@@ -124,6 +125,6 @@ public class CalculatorExampleUserDialog(IConsole console, UserDialogBase previo
         _console.WriteLine("Choose a shape to calculate the area for");
         _console.ListItems(shapes, true);
         var userInput = _console.GetIntInput(1, shapes.Count, true);
-        return userInput.UserInput ?? 0;
+        return userInput.Input ?? 0;
     }
 }

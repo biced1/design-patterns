@@ -6,6 +6,7 @@ public class AbstractFactoryUserDialog(IConsole console, UserDialogBase previous
 {
     public override string DisplayName => "Abstract Factory";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var options = new List<UserDialogBase> {

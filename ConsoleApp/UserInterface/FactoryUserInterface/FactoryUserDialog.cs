@@ -6,6 +6,7 @@ public class FactoryUserDialog(IConsole console, UserDialogBase previousDialog) 
 {
     public override string DisplayName => "Factory";
 
+    /// <inheritdoc />
     public override void Run()
     {
         var options = new List<UserDialogBase> {

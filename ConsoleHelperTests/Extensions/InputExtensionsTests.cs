@@ -20,7 +20,7 @@ public class InputExtensionsTests
 
         var result = consoleMock.Object.GetIntInput(0, 3);
 
-        Assert.Equal(2, result.UserInput);
+        Assert.Equal(2, result.Input);
     }
 
     [Theory]
@@ -35,7 +35,7 @@ public class InputExtensionsTests
 
         var result = consoleMock.Object.GetIntInput(minimum, maximum);
 
-        Assert.Null(result.UserInput);
+        Assert.Null(result.Input);
     }
 
     [Fact]
