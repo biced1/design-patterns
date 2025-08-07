@@ -1,3 +1,4 @@
+using Adapter.CalculatorExample;
 using Adapter.CalculatorExample.Calculator;
 using ConsoleHelper;
 

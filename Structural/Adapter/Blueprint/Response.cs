@@ -6,7 +6,7 @@ public class Response
     {
         Property = property;
     }
-    
+
     /// <summary>
     /// Readonly property with proper naming conventions
     /// </summary>

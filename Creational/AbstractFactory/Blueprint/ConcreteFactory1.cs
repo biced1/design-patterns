@@ -1,5 +1,3 @@
-using System;
-
 namespace AbstractFactory.Blueprint;
 
 public class ConcreteFactory1 : IAbstractFactory

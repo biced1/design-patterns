@@ -14,7 +14,7 @@ public class BlueprintUserDialog : UserDialogBase
     {
         var receiver = new Receiver();
         var client = new Client(receiver, new Invoker());
-        
+
         var userInput = new IntUserInput();
         while (!userInput.ShouldGoBack)
         {

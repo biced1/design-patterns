@@ -73,7 +73,7 @@ public class AreaCalculatorTests
 
         Assert.Equal(2, area);
     }
-    
+
     [Fact]
     public void CalculatePyramid_CalculatesCorrectly()
     {
@@ -92,7 +92,7 @@ public class AreaCalculatorTests
         var length = 5;
         var width = 4;
         var height = 1;
-        
+
         var area = _areaCalculator.CalculatePyramid(length, width, height);
 
         Assert.Equal(41.950669501767955, area);

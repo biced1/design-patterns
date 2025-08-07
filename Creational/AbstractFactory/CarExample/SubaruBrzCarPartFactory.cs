@@ -1,4 +1,3 @@
-using System;
 using AbstractFactory.CarExample.CarPart;
 
 namespace AbstractFactory.CarExample;

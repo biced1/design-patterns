@@ -4,7 +4,7 @@ using ConsoleApp.UserInterface.CommandUserInterface;
 using ConsoleApp.UserInterface.FactoryUserInterface;
 using ConsoleHelper;
 
-namespace DesignPatterns.UserInterface;
+namespace ConsoleApp.UserInterface;
 
 public class UserDialog : UserDialogBase
 {

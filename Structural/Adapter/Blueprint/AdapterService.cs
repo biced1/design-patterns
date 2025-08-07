@@ -1,3 +1,5 @@
+using Adapter.Blueprint.Legacy;
+
 namespace Adapter.Blueprint;
 
 public class AdapterService : IService

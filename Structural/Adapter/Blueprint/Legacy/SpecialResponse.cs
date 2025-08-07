@@ -1,6 +1,4 @@
-using System;
-
-namespace Adapter.Blueprint;
+namespace Adapter.Blueprint.Legacy;
 
 public class SpecialResponse
 {

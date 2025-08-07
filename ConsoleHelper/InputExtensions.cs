@@ -58,7 +58,7 @@ public static class InputExtensions
         double capturedInput = 0;
         while (!wasSuccessful)
         {
-        var input = console.ReadLine()?.ToLower();
+            var input = console.ReadLine()?.ToLower();
             wasSuccessful = double.TryParse(input, out var parsedInput);
 
             if (wasSuccessful)
@@ -70,7 +70,7 @@ public static class InputExtensions
                 console.WriteLine("Invalid input. Please try again.");
             }
         }
-        
+
         console.WriteLine("");
         return capturedInput;
     }

@@ -1,12 +1,12 @@
 using ConsoleHelper;
-using DesignPatterns.Factory.Blueprint;
+using Factory.Blueprint;
 
 namespace ConsoleApp.UserInterface.FactoryUserInterface;
 
 public class BlueprintUserDialog : UserDialogBase
 {
     public BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    {}
+    { }
 
     public override string DisplayName => "Blueprint";
 

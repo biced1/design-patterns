@@ -25,7 +25,7 @@ public class AbstractFactoryTests
 
         Assert.IsType<ProductB1>(product);
     }
-    
+
     [Fact]
     public void CreateProductA_CreatesFactory2Items()
     {
@@ -35,7 +35,7 @@ public class AbstractFactoryTests
 
         Assert.IsType<ProductA2>(product);
     }
-    
+
     [Fact]
     public void CreateProductB_CreatesFactory2Items()
     {

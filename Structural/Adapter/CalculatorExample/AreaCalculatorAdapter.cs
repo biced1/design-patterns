@@ -1,4 +1,6 @@
-namespace Adapter.CalculatorExample.Calculator;
+using Adapter.CalculatorExample.Calculator;
+
+namespace Adapter.CalculatorExample;
 
 public class AreaCalculatorAdapter : IAreaCalculator
 {

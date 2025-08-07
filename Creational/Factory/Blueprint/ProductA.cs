@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.Blueprint;
+namespace Factory.Blueprint;
 
 /// <summary>
 /// ProductA is a thingy that does stuff specific to product A.

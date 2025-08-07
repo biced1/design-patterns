@@ -25,12 +25,12 @@ public class CarPartFactoryTests
         Assert.Equal(expectedMake, transmission.Make);
         Assert.Equal(expectedModel, transmission.Model);
         Assert.Equal(5, transmission.Gears);
-        
+
         Assert.Equal(expectedMake, cupHolder.Make);
         Assert.Equal(expectedModel, cupHolder.Model);
         Assert.Equal(2, cupHolder.Capacity);
     }
-    
+
     [Fact]
     public void CreateEngine_CreatesSubaruBrzParts()
     {
@@ -50,7 +50,7 @@ public class CarPartFactoryTests
         Assert.Equal(expectedMake, transmission.Make);
         Assert.Equal(expectedModel, transmission.Model);
         Assert.Equal(6, transmission.Gears);
-        
+
         Assert.Equal(expectedMake, cupHolder.Make);
         Assert.Equal(expectedModel, cupHolder.Model);
         Assert.Equal(2, cupHolder.Capacity);

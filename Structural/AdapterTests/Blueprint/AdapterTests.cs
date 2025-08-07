@@ -1,13 +1,15 @@
 ﻿using Adapter.Blueprint;
+using Adapter.Blueprint.Legacy;
 
-namespace AdapterTests;
+namespace AdapterTests.Blueprint;
 
 public class AdapterTests
 {
     private readonly IService _adapter;
     private readonly LegacyService _legacyService;
 
-    public AdapterTests() {
+    public AdapterTests()
+    {
         _legacyService = new LegacyService();
         _adapter = new AdapterService(_legacyService);
     }

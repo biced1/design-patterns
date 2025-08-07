@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.AuthenticationExample.MFA;
+namespace Factory.AuthenticationExample.MFA;
 
 /// <summary>
 /// Service that authenticates a user with some kind of Multi-factor authentication.

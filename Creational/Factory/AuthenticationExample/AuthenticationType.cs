@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.AuthenticationExample;
+namespace Factory.AuthenticationExample;
 
 /// <summary>
 /// Different types of multi-factor authentication.

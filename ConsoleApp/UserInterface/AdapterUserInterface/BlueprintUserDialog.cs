@@ -1,4 +1,5 @@
 using Adapter.Blueprint;
+using Adapter.Blueprint.Legacy;
 using ConsoleHelper;
 
 namespace ConsoleApp.UserInterface.AdapterUserInterface;

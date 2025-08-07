@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.Blueprint;
+namespace Factory.Blueprint;
 
 /// <summary>
 /// Factory interface. 

@@ -1,4 +1,4 @@
-namespace Adapter.Blueprint;
+namespace Adapter.Blueprint.Legacy;
 
 public class LegacyService
 {

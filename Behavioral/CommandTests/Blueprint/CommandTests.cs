@@ -1,6 +1,6 @@
 using Command.Blueprint;
 
-namespace CommandTests;
+namespace CommandTests.Blueprint;
 
 public class CommandTests
 {
@@ -33,5 +33,27 @@ public class CommandTests
         _client.ExecuteCommand2();
 
         Assert.Equal("Tes", _receiver.GetState());
+    }
+
+    [Fact]
+    public void Undo_DoesNothingIfNoCommands()
+    {
+        _receiver.SetState("Test");
+
+        _client.Undo();
+
+        Assert.Equal("Test", _receiver.GetState());
+    }
+
+    [Fact]
+    public void Undo_UndoesLastCommand()
+    {
+        _receiver.SetState("Test");
+
+        _client.ExecuteCommand1('A');
+        _client.ExecuteCommand1('b');
+        _client.Undo();
+
+        Assert.Equal("TestA", _receiver.GetState());
     }
 }

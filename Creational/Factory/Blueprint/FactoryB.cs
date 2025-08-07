@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.Blueprint;
+namespace Factory.Blueprint;
 
 /// <summary>
 /// Factory that creates a specific instance of <see cref="ProductB"/>

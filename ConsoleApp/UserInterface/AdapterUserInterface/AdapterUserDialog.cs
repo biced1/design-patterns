@@ -15,7 +15,7 @@ public class AdapterUserDialog : UserDialogBase
             new BlueprintUserDialog(_console, this),
             new CalculatorExampleUserDialog(_console, this)
         };
-        
+
         RunSelectedPattern(options, "Welcome, what example of the Adapter Pattern would you like to explore?");
     }
 }

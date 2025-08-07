@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.AuthenticationExample;
+namespace Factory.AuthenticationExample;
 
 /// <summary>
 /// A user of the system.

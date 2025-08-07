@@ -6,7 +6,7 @@ namespace ConsoleApp.UserInterface.AbstractFactoryUserInterface;
 public class BlueprintUserDialog : UserDialogBase
 {
     public BlueprintUserDialog(IConsole console, UserDialogBase previousDialog) : base(console, previousDialog)
-    {}
+    { }
 
     public override string DisplayName => "Blueprint";
 

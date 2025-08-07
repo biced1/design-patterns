@@ -1,6 +1,6 @@
-using DesignPatterns.Factory.AuthenticationExample.MFA;
+using Factory.AuthenticationExample.MFA;
 
-namespace DesignPatterns.Factory.AuthenticationExample.Login;
+namespace Factory.AuthenticationExample.Login;
 
 /// <summary>
 /// Service that allows a user to login to an application.

@@ -1,4 +1,4 @@
-using DesignPatterns.Factory.Blueprint;
+using Factory.Blueprint;
 
 namespace FactoryTests.Blueprint;
 

@@ -1,5 +1,5 @@
-using DesignPatterns.Factory.AuthenticationExample;
-using DesignPatterns.Factory.AuthenticationExample.Login;
+using Factory.AuthenticationExample;
+using Factory.AuthenticationExample.Login;
 
 namespace FactoryTests.AuthenticationExample.Login;
 

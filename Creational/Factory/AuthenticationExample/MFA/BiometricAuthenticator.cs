@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.AuthenticationExample.MFA;
+namespace Factory.AuthenticationExample.MFA;
 
 /// <inheritdoc />
 public class BiometricAuthenticator : IMfaAuthenticator

@@ -1,4 +1,4 @@
-namespace DesignPatterns.Factory.Blueprint;
+namespace Factory.Blueprint;
 
 /// <summary>
 /// Product Interface.
@@ -15,7 +15,8 @@ public interface IProduct
     /// Represents the nickname of the product to easily understand what kind of product it is.
     /// </summary>
     /// <returns>The nickname of the product.</returns>
-    string Nickname {
+    string Nickname
+    {
         get;
     }
 }
