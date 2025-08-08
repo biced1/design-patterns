@@ -1,0 +1,13 @@
+C:\git\design-patterns\bin\Debug\net8.0\DesignPatterns.deps.json
+C:\git\design-patterns\bin\Debug\net8.0\DesignPatterns.dll
+C:\git\design-patterns\bin\Debug\net8.0\DesignPatterns.pdb
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.csproj.CoreCompileInputs.cache
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.sourcelink.json
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.dll
+C:\git\design-patterns\obj\Debug\net8.0\refint\DesignPatterns.dll
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.pdb
+C:\git\design-patterns\obj\Debug\net8.0\ref\DesignPatterns.dll
+C:\git\design-patterns\bin\Debug\net8.0\DesignPatterns.exe
+C:\git\design-patterns\bin\Debug\net8.0\DesignPatterns.runtimeconfig.json
+C:\git\design-patterns\obj\Debug\net8.0\DesignPatterns.genruntimeconfig.cache
