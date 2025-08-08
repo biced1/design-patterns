@@ -26,11 +26,11 @@ public static class InputExtensions
         while (!wasSuccessful)
         {
             var input = console.ReadLine()?.ToLower();
-            if (input == "q" && !listOnly)
+            if (input == SelectionConstants.QUIT && !listOnly)
             {
                 Environment.Exit(0);
             }
-            if (input == "b" && !listOnly)
+            if (input == SelectionConstants.BACK && !listOnly)
             {
                 shouldGoBack = true;
                 wasSuccessful = true;

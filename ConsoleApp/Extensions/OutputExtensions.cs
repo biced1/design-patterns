@@ -1,3 +1,4 @@
+using ConsoleApp.UserInterface;
 using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.Extensions;
@@ -18,8 +19,8 @@ public static class OutputExtensions
         }
         if (!listOnly)
         {
-            console.WriteLine("\tb: back");
-            console.WriteLine("\tq: quit");
+            console.WriteLine($"\t{SelectionConstants.BACK}: back");
+            console.WriteLine($"\t{SelectionConstants.QUIT}: quit");
         }
     }
 }

@@ -1,6 +1,7 @@
 using ConsoleApp.Wrapper;
 using ConsoleApp.Extensions;
 using Moq;
+using ConsoleApp.UserInterface;
 
 namespace ConsoleAppTests.Extensions;
 
@@ -31,7 +32,7 @@ public class InputExtensionsTests
     {
 
         consoleMock.Setup(x => x.ReadLine()).Returns(invalidInput);
-        consoleMock.Setup(x => x.ReadLine()).Returns("b");
+        consoleMock.Setup(x => x.ReadLine()).Returns(SelectionConstants.BACK);
 
         var result = consoleMock.Object.GetIntInput(minimum, maximum);
 
