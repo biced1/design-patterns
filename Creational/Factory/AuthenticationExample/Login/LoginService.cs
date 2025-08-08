@@ -4,16 +4,16 @@ namespace Factory.AuthenticationExample.Login;
 
 /// <summary>
 /// Service that allows a user to login to an application.
-/// Also is using the factory pattern. 
+/// Additionally implements the factory pattern to create an <see cref="IMfaAuthenticator"/>
 /// Most factory pattern implementations are in services doing other things.
 /// </summary>
 public abstract class LoginService
 {
-    private IMfaAuthenticator mfaAuthenticator;
+    private readonly IMfaAuthenticator _mfaAuthenticator;
 
     public LoginService()
     {
-        mfaAuthenticator = CreateMFAVerificationService();
+        _mfaAuthenticator = CreateMFAVerificationService();
     }
 
     /// <summary>
@@ -22,7 +22,7 @@ public abstract class LoginService
     /// <param name="user"></param>
     public void Login(User user)
     {
-        mfaAuthenticator.Authenticate(user);
+        _mfaAuthenticator.Authenticate(user);
         //other login tasks
     }
 
