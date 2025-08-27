@@ -1,9 +1,12 @@
 namespace Command.HanoiExample.Command;
 
-public class NewGameCommand(GameEditor editor, Application application) : CommandBase(editor, application)
+public class NewGameCommand(GameEditor editor, uint numberOfDiscs) : ICommand
 {
-    public override void Execute()
+    private readonly GameEditor _editor = editor;
+    private readonly uint _numberOfDiscs = numberOfDiscs;
+
+    public void Execute()
     {
-        _editor.NewGame(_application.NumberOfDiscs);
+        _editor.NewGame(_numberOfDiscs);
     }
 }

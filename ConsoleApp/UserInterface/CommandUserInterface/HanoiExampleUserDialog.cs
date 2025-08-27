@@ -1,6 +1,8 @@
 using System.Text;
 using Command.HanoiExample;
+using Command.HanoiExample.Command;
 using Command.HanoiExample.Model;
+using ConsoleApp.Extensions;
 using ConsoleApp.Wrapper;
 
 namespace ConsoleApp.UserInterface.CommandUserInterface;
@@ -11,9 +13,26 @@ public class HanoiExampleUserDialog(IConsole console, UserDialogBase? previousDi
 
     public override void Run()
     {
-        var application = new Application();
-        application.NewGame();
-        DisplayGameState(application.GetGameState());
+        var gameEditor = new GameEditor();
+        var inputHandler = new InputHandler();
+        inputHandler.SetCommand(new NewGameCommand(gameEditor, 6));
+        inputHandler.HandleInput();
+        DisplayGameState(gameEditor.GameState);
+
+        while (true)
+        {
+            //ask the user what move they would like to make
+            _console.WriteLine("Which rod would you like to move a disc from?");
+            var options = new List<string> { "Left", "Middle", "Right" };
+            _console.ListItems(options, true);
+            var sourceRodChoice = _console.GetIntInput(0, options.Count);
+            _console.WriteLine("Which rod would you like to move a disc to?");
+            var destinationRodChoice = _console.GetIntInput(0, options.Count);
+            //make the move
+            inputHandler.SetCommand(new MoveDiscCommand(gameEditor, (RodPosition)sourceRodChoice.Input, (RodPosition)destinationRodChoice.Input));
+            inputHandler.HandleInput();
+            DisplayGameState(gameEditor.GameState);
+        }
     }
 
     private void DisplayGameState(GameState gameState)

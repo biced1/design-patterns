@@ -12,6 +12,7 @@ public static class InputExtensions
     /// <param name="message">The message to be displayed for every attempt to retrieve input.</param>
     /// <param name="minimum">The lowest number that will be accepted, inclusive.</param>
     /// <param name="maximum">The highest number that will be accepted, inclusive.</param>
+    /// <param name="listOnly">Determines if system constants should be accepted as values.</param>
     /// <returns>The captured input, or null if cancelled.</returns>
     public static UserInput<int?> GetIntInput(this IConsole console, int minimum = int.MinValue, int maximum = int.MaxValue, bool listOnly = false)
     {

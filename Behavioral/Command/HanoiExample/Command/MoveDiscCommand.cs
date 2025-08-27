@@ -1,11 +1,11 @@
-using System;
+using Command.HanoiExample.Model;
 
 namespace Command.HanoiExample.Command;
 
-public class MoveDiscCommand(GameEditor editor, Application application) : CommandBase(editor, application)
+public class MoveDiscCommand(GameEditor editor, RodPosition sourceRod, RodPosition destinationRod) : ICommand
 {
-    public override void Execute()
+    public void Execute()
     {
-        throw new NotImplementedException();
+        editor.MoveDisc(sourceRod, destinationRod);
     }
 }

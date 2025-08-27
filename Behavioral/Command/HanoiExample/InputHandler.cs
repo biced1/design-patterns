@@ -2,16 +2,15 @@ using Command.HanoiExample.Command;
 
 namespace Command.HanoiExample;
 
-public class DiscControl
+public class InputHandler
 {
-    private CommandBase? command;
+    private ICommand? command;
 
-    public void SetCommand(CommandBase command) {
+    public void SetCommand(ICommand command) {
         this.command = command;
     }
 
-    public void MoveDiscs() {
+    public void HandleInput() {
         command?.Execute();
     }
-
 }
