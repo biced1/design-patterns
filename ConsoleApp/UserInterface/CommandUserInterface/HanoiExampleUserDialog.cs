@@ -19,18 +19,27 @@ public class HanoiExampleUserDialog(IConsole console, UserDialogBase? previousDi
         inputHandler.HandleInput();
         DisplayGameState(gameEditor.GameState);
 
-        while (true)
+        var sourceRodChoice = new UserInput<int?>();
+        var destinationRodChoice = new UserInput<int?>();
+        while (!sourceRodChoice.ShouldGoBack && !destinationRodChoice.ShouldGoBack)
         {
-            //ask the user what move they would like to make
             _console.WriteLine("Which rod would you like to move a disc from?");
             var options = new List<string> { "Left", "Middle", "Right" };
             _console.ListItems(options, true);
-            var sourceRodChoice = _console.GetIntInput(0, options.Count);
+            sourceRodChoice = _console.GetIntInput(0, options.Count);
+
             _console.WriteLine("Which rod would you like to move a disc to?");
-            var destinationRodChoice = _console.GetIntInput(0, options.Count);
-            //make the move
-            inputHandler.SetCommand(new MoveDiscCommand(gameEditor, (RodPosition)sourceRodChoice.Input, (RodPosition)destinationRodChoice.Input));
-            inputHandler.HandleInput();
+            destinationRodChoice = _console.GetIntInput(0, options.Count);
+
+            if (sourceRodChoice.Input != null && destinationRodChoice.Input != null)
+            {
+                inputHandler.SetCommand(new MoveDiscCommand(gameEditor, (RodPosition)sourceRodChoice.Input, (RodPosition)destinationRodChoice.Input));
+                inputHandler.HandleInput();
+            }
+            else
+            {
+                _console.WriteLine("Invalid input. Please try again, or press q to cancel.");
+            }
             DisplayGameState(gameEditor.GameState);
         }
     }

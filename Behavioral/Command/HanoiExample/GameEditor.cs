@@ -4,7 +4,7 @@ namespace Command.HanoiExample;
 
 public class GameEditor
 {
-    public GameState GameState { get; set; } = new GameState(new Rod(RodPosition.Left), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
+    public GameState GameState { get; private set; } = new GameState(new Rod(RodPosition.Left), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
 
     public void NewGame(uint numberOfDiscs)
     {
@@ -13,11 +13,39 @@ public class GameEditor
 
     public void MoveDisc(RodPosition sourceRod, RodPosition destinationRod)
     {
-        //validation
         var source = GetRod(sourceRod);
         var destination = GetRod(destinationRod);
-        var discToMove = source.Discs.Pop();
-        destination.Discs.Push(discToMove);
+        if (CanMoveDisc(source, destination))
+        {
+            var discToMove = source.Discs.Pop();
+            destination.Discs.Push(discToMove);
+        }
+    }
+
+    public bool CanMoveDisc(RodPosition sourceRod, RodPosition destinationRod)
+    {
+        var source = GetRod(sourceRod);
+        var destination = GetRod(destinationRod);
+        return CanMoveDisc(source, destination);
+    }
+
+    private bool CanMoveDisc(Rod source, Rod destination)
+    {
+        var canMove = true;
+        if (source.Discs.Count == 0)
+        {
+            canMove = false;
+        }
+        else
+        {
+            var discToMove = source.Discs.Peek();
+            if (destination.Discs.Count != 0)
+            {
+                var topDestinationDisc = destination.Discs.Peek();
+                canMove = discToMove.Size < topDestinationDisc.Size;
+            }
+        }
+        return canMove;
     }
 
     private Rod GetRod(RodPosition position) => position switch
