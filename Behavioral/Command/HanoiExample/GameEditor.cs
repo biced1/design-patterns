@@ -2,17 +2,32 @@ using Command.HanoiExample.Model;
 
 namespace Command.HanoiExample;
 
+/// <summary>
+/// Editor that allows changes to be made to the Towers of Hanoi <see cref="GameState"/>
+/// </summary>
 public class GameEditor
 {
     public GameState GameState { get; private set; } = new GameState(new Rod(RodPosition.Left), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
     private uint _numberOfDiscs = 0;
-    public void NewGame(uint numberOfDiscs)
+
+    /// <summary>
+    /// Creates a new game, with a stack of <see cref="Disc"/> on the left <see cref="Rod"/>.
+    /// Functions that should only be accessible from commands, and not the application, should be internal.
+    /// </summary>
+    /// <param name="numberOfDiscs">The number of <see cref="Disc"/> to put on the left <see cref="Rod"/></param>
+    internal void NewGame(uint numberOfDiscs)
     {
         _numberOfDiscs = numberOfDiscs;
         GameState = new GameState(new Rod(RodPosition.Left, numberOfDiscs), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
     }
 
-    public void MoveDisc(RodPosition sourceRod, RodPosition destinationRod)
+    /// <summary>
+    /// Moves a <see cref="Disc"/> from one <see cref="Rod"/> to another.
+    /// Functions that should only be accessible from commands, and not the application, should be internal.
+    /// </summary>
+    /// <param name="sourceRod">The <see cref="Rod"/> to move the <see cref="Disc"/> from.</param>
+    /// <param name="destinationRod">The <see cref="Rod"/> to move the <see cref="Disc"/> to.</param>
+    internal void MoveDisc(RodPosition sourceRod, RodPosition destinationRod)
     {
         var source = GetRod(sourceRod);
         var destination = GetRod(destinationRod);
@@ -23,6 +38,12 @@ public class GameEditor
         }
     }
 
+    /// <summary>
+    /// Determines if a <see cref="Disc"/> can be moved from one <see cref="Rod"/> to another.
+    /// </summary>
+    /// <param name="sourceRod">The <see cref="Rod"/> to move the <see cref="Disc"/> from.</param>
+    /// <param name="destinationRod">The <see cref="Rod"/> to move the <see cref="Disc"/> to.</param>
+    /// <returns>True if this is a legal move, false if it is not.</returns>
     public bool CanMoveDisc(RodPosition sourceRod, RodPosition destinationRod)
     {
         var source = GetRod(sourceRod);
@@ -30,6 +51,10 @@ public class GameEditor
         return CanMoveDisc(source, destination);
     }
 
+    /// <summary>
+    /// Determines if the user has won the current Towers of Hanoi game.
+    /// </summary>
+    /// <returns>True if the user has won, false if they have lost.</returns>
     public bool HasWon()
     {
         return GameState.MiddleRod.Discs.Count == _numberOfDiscs
