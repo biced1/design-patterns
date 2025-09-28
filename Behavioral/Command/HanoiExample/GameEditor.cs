@@ -8,7 +8,6 @@ namespace Command.HanoiExample;
 public class GameEditor
 {
     public GameState GameState { get; private set; } = new GameState(new Rod(RodPosition.Left), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
-    private uint _numberOfDiscs = 0;
 
     /// <summary>
     /// Creates a new game, with a stack of <see cref="Disc"/> on the left <see cref="Rod"/>.
@@ -17,7 +16,6 @@ public class GameEditor
     /// <param name="numberOfDiscs">The number of <see cref="Disc"/> to put on the left <see cref="Rod"/></param>
     internal void NewGame(uint numberOfDiscs)
     {
-        _numberOfDiscs = numberOfDiscs;
         GameState = new GameState(new Rod(RodPosition.Left, numberOfDiscs), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
     }
 
@@ -39,6 +37,15 @@ public class GameEditor
     }
 
     /// <summary>
+    /// Adds a disc to the bottom of the left rod.
+    /// Functions that should only be accessible from commands, and not the application, should be internal.
+    /// </summary>
+    internal void AddDisc()
+    {
+        GameState.LeftRod.AddDisc((uint)GameState.TotalDiscs + 1);
+    }
+
+    /// <summary>
     /// Determines if a <see cref="Disc"/> can be moved from one <see cref="Rod"/> to another.
     /// </summary>
     /// <param name="sourceRod">The <see cref="Rod"/> to move the <see cref="Disc"/> from.</param>
@@ -57,8 +64,8 @@ public class GameEditor
     /// <returns>True if the user has won, false if they have lost.</returns>
     public bool HasWon()
     {
-        return GameState.MiddleRod.Discs.Count == _numberOfDiscs
-            || GameState.RightRod.Discs.Count == _numberOfDiscs;
+        return GameState.MiddleRod.Discs.Count == GameState.TotalDiscs
+            || GameState.RightRod.Discs.Count == GameState.TotalDiscs;
     }
 
     private static bool CanMoveDisc(Rod source, Rod destination)

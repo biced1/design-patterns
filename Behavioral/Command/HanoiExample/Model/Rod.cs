@@ -9,7 +9,7 @@ public class Rod
     /// The stack of <see cref="Disc"/>(s) on this rod.
     /// </summary>
     public Stack<Disc> Discs { get; }
-    
+
     /// <summary>
     /// The position of this rod.
     /// Either left, middle or right.
@@ -29,6 +29,27 @@ public class Rod
         for (uint disc = discs; disc > 0; disc--)
         {
             Discs.Push(new Disc(disc));
+        }
+    }
+
+    /// <summary>
+    /// Adds a new <see cref="Disc"/> to the bottom of the stack.
+    /// </summary>
+    /// <param name="size">The size of the <see cref="Disc"/> to add to the stack.</param>
+    internal void AddDisc(uint size)
+    {
+        var tempDiscs = new Stack<Disc>();
+
+        while (Discs.Count > 0)
+        {
+            tempDiscs.Push(Discs.Pop());
+        }
+
+        Discs.Push(new Disc(size));
+
+        while (tempDiscs.Count > 0)
+        {
+            Discs.Push(tempDiscs.Pop());
         }
     }
 }

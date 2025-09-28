@@ -51,7 +51,7 @@ public class GameEditorTests
         Assert.Single(_gameEditor.GameState.MiddleRod.Discs);
     }
 
-        [Fact]
+    [Fact]
     public void MoveDisc_DoesntMove_IfInvalid()
     {
         _gameEditor.NewGame(8);
@@ -59,6 +59,18 @@ public class GameEditorTests
         _gameEditor.MoveDisc(RodPosition.Left, RodPosition.Middle);
 
         Assert.Equal(7, _gameEditor.GameState.LeftRod.Discs.Count);
+        Assert.Single(_gameEditor.GameState.MiddleRod.Discs);
+    }
+
+    
+    [Fact]
+    public void AddDisc_AddsNewDisc_ToLeftRod()
+    {
+        _gameEditor.NewGame(8);
+        _gameEditor.MoveDisc(RodPosition.Left, RodPosition.Middle);
+        _gameEditor.AddDisc();
+
+        Assert.Equal(8, _gameEditor.GameState.LeftRod.Discs.Count);
         Assert.Single(_gameEditor.GameState.MiddleRod.Discs);
     }
 }

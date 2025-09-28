@@ -26,5 +26,5 @@ public class GameState(Rod leftRod, Rod middleRod, Rod rightRod)
     /// <summary>
     /// The total number of discs in the game.
     /// </summary>
-    public int TotalDiscs { get; } = leftRod.Discs.Count + middleRod.Discs.Count + rightRod.Discs.Count;
+    public int TotalDiscs { get => LeftRod.Discs.Count + MiddleRod.Discs.Count + RightRod.Discs.Count; }
 }

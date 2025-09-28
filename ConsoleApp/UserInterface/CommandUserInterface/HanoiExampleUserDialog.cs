@@ -19,13 +19,19 @@ public class HanoiExampleUserDialog(IConsole console, UserDialogBase? previousDi
     /// <inheritdoc />
     public override string DisplayName => "Towers of Hanoi Game";
 
+    private const uint STARTING_DISCS = 6;
+    private const uint MAX_DISCS = 8;
+    private const double CHANCE_TO_ADD_DISC = 0.01;
+
     /// <inheritdoc />
     public override void Run()
     {
         var gameEditor = new GameEditor();
         var inputHandler = new InputHandler();
         var commandHistory = new Stack<ICommand>();
-        inputHandler.SetCommand(new NewGameCommand(gameEditor, 6));
+        var random = new Random();
+
+        inputHandler.SetCommand(new NewGameCommand(gameEditor, STARTING_DISCS));
         inputHandler.HandleInput();
 
         _console.WriteLine($"Welcome to Towers of Hanoi Game.\nThe objective is to move all discs from one rod to any of the other rods.\nThe catch? You cannot move a larger rod on top of a smaller rod. Enjoy!");
@@ -56,11 +62,20 @@ public class HanoiExampleUserDialog(IConsole console, UserDialogBase? previousDi
                     inputHandler.SetCommand(moveDiscCommand);
                     inputHandler.HandleInput();
                     commandHistory.Push(moveDiscCommand);
+
+                    if (gameEditor.GameState.TotalDiscs < MAX_DISCS && random.NextDouble() <= CHANCE_TO_ADD_DISC)
+                    {
+                        inputHandler.SetCommand(new AddDiscCommand(gameEditor));
+                        inputHandler.HandleInput();
+                        _console.WriteLine("OH NO! A new disc has been added. The game just got harder. Enter any key(s) to continue.");
+                        _console.ReadLine();
+                    }
                 }
                 else
                 {
                     _console.WriteLine("Invalid input. Please try again, or press q to cancel.");
                 }
+
             }
 
             DisplayGameState(gameEditor.GameState);
