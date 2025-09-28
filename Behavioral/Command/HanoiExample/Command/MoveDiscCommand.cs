@@ -8,4 +8,9 @@ public class MoveDiscCommand(GameEditor editor, RodPosition sourceRod, RodPositi
     {
         editor.MoveDisc(sourceRod, destinationRod);
     }
+
+    public void Undo()
+    {
+        editor.MoveDisc(destinationRod, sourceRod);
+    }
 }

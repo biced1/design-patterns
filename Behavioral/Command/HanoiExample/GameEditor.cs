@@ -5,9 +5,10 @@ namespace Command.HanoiExample;
 public class GameEditor
 {
     public GameState GameState { get; private set; } = new GameState(new Rod(RodPosition.Left), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
-
+    private uint _numberOfDiscs = 0;
     public void NewGame(uint numberOfDiscs)
     {
+        _numberOfDiscs = numberOfDiscs;
         GameState = new GameState(new Rod(RodPosition.Left, numberOfDiscs), new Rod(RodPosition.Middle), new Rod(RodPosition.Right));
     }
 
@@ -29,7 +30,13 @@ public class GameEditor
         return CanMoveDisc(source, destination);
     }
 
-    private bool CanMoveDisc(Rod source, Rod destination)
+    public bool HasWon()
+    {
+        return GameState.MiddleRod.Discs.Count == _numberOfDiscs
+            || GameState.RightRod.Discs.Count == _numberOfDiscs;
+    }
+
+    private static bool CanMoveDisc(Rod source, Rod destination)
     {
         var canMove = true;
         if (source.Discs.Count == 0)
