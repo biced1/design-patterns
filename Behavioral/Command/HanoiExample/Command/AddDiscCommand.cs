@@ -17,11 +17,11 @@ public class AddDiscCommand(GameEditor editor) : ICommand
     }
 
     /// <summary>
-    /// Not implemented, as there is no reason to undo this command.
+    /// Not valid, as there is no reason to undo this command.
     /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
+    /// <exception cref="InvalidOperationException"></exception>
     public void Undo()
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException();
     }
 }

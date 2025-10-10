@@ -92,6 +92,6 @@ public class GameEditor
         RodPosition.Left => GameState.LeftRod,
         RodPosition.Middle => GameState.MiddleRod,
         RodPosition.Right => GameState.RightRod,
-        _ => throw new NotImplementedException()
+        _ => throw new InvalidOperationException()
     };
 }
