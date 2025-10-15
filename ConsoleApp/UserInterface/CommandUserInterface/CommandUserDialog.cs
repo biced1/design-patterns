@@ -16,7 +16,8 @@ public class CommandUserDialog(IConsole console, UserDialogBase? previousDialog)
     public override void Run()
     {
         var options = new List<UserDialogBase> {
-            new BlueprintUserDialog(_console, this)
+            new BlueprintUserDialog(_console, this),
+            new HanoiExampleUserDialog(_console, this)
         };
 
         RunSelectedPattern(options, "Welcome, what example of the Command Pattern would you like to explore?");
